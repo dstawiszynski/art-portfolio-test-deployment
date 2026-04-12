@@ -5,6 +5,11 @@
     "packageManager": "npm"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "art-portfolio-test-deployment": {
       "projectType": "application",
@@ -25,7 +30,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/@xalpol12/ngx-artist-portfolio/src/lib/styles/main.scss"
             ]
           },
           "configurations": {
