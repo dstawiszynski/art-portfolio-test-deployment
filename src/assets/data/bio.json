@@ -1,0 +1,13 @@
+{
+  "id": "bio",
+  "content": [
+    {
+      "type": "paragraph",
+      "data": "Urodziła się w 1999 r. w Poznaniu.</br>Obecnie jest studentką III roku Malarstwa na Wydziale Malarstwa i Rysunku Uniwersytetu Artystycznego im. M. Abakanowicz w Poznaniu.</br>Zajmuje się głównie malarstwem, rysunkiem oraz tkaniną artystyczną."
+    },
+    {
+      "type": "paragraph",
+      "data": "</br>Brała udział w takich wydarzeniach jak: </br> - 8. edycja projektu <b>„Bieguny. Dialogi młodych: INNY”</b> organizowana przez Galerię Miejską Arsenał w Poznaniu</br>- V Biennale Tkaniny Artystycznej w Poznaniu <b>„Podróż do niewidzialności”</b></br> - <b>Międzynarodowy Plener Artystyczny</b> organizowany we współpracy z Wyższą Szkołą Sztuki i Designu w Bratysławie. "
+    }
+  ]
+}
