@@ -3,6 +3,7 @@
 // Skips silently (with a warning) when it isn't set, so local/dev builds aren't blocked.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -33,7 +34,11 @@ Allow: /
 Sitemap: ${normalizedBaseUrl}/sitemap.xml
 `;
 
-writeFileSync(path.join(appRoot, 'public/sitemap.xml'), sitemap);
-writeFileSync(path.join(appRoot, 'public/robots.txt'), robots);
+const publicDir = path.join(appRoot, 'public');
+
+mkdirSync(publicDir, { recursive: true });
+
+writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
+writeFileSync(path.join(publicDir, 'robots.txt'), robots);
 
 console.log(`[generate-sitemap] Wrote sitemap.xml with ${urls.length} URLs and robots.txt.`);
