@@ -49,16 +49,32 @@
         "height": 1811,
         "description": {
           "title": "<i>Pojedynek</i>",
-          "medium": "akryl na płótnie",
+          "medium": "akryl i olej na płótnie",
           "size": "210 x 60 cm",
           "year": "2026"
         }
+      },
+      {
+        "type": "paragraph",
+        "data":  "W tytułowym „Pojedynku” biorą udział trzy przedmioty: pistolet, lornetka oraz miarka. Ich wspólne zestawienie tworzy sytuację o silnym ładunku znaczeniowym, który jest spotęgowany poprzez możliwość zmiany wzajemnego położenia elementów składających się na pracę. Ten potencjał sprawia, że intensywniej wybrzmiewa analogia między bronią a przedmiotem służącym jedynie do obserwacji. Nieprzypadkowe w tym minimalistycznym przedstawieniu jest również umieszczenie miarki, wprowadzającej zarówno dystans fizyczny, jak i moralny. Z daleka łatwiej jest zrobić coś, na co z bliska sumienie nie dałoby przyzwolenia. Im większa odległość, tym bardziej sprawca we własnym poczuciu upodabnia się do obserwatora. A może różnica między nimi wcale nie jest tak duża, jak mogłoby się wydawać?"
       },
       {
         "type": "image",
         "image": "v1776006506/Bandosz_Zuzanna_02_detal_gxivfc.jpg",
         "width": 1772,
         "height": 1181
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "width": 1500,
+          "height": 1000,
+          "orientation": "horizontal"
+        },
+        "data": [
+          "v1789315170/Kopia_lornetka_ytiis0.jpg",
+          "v1789315172/Kopia_pistolet2_x5cc6r.jpg"
+        ]
       }
     ]
   },
@@ -130,7 +146,7 @@
     "content": [
       {
         "type": "paragraph",
-        "data":  "Praca powstała podczas Międzynarodowego Pleneru Artystycznego organizowanego we współpracy z Wyższą Szkołą Sztuki i Designu w Bratysławie prowadzonego pod hasłem Powtórzenie jako czynnik kształtujący nowe."},
+        "data":  "Praca powstała podczas Międzynarodowego Pleneru Artystycznego organizowanego we współpracy z Wyższą Szkołą Sztuki i Designu w Bratysławie prowadzonego pod hasłem <i>Powtórzenie jako czynnik kształtujący nowe.</i>"},
       {
         "type": "gallery-grid",
         "config": {
@@ -212,8 +228,8 @@
       {
         "type": "image",
         "image": "v1782161603/2.2_tmxelf.jpg",
-        "width": 1300,
-        "height": 867
+        "width": 3000,
+        "height": 2000
       },
       {
         "type": "gallery-grid",
@@ -338,7 +354,7 @@
         "height": 2000,
         "description": {
           "title": "<i>Bez tytułu</i>",
-          "medium": "technika własna",
+          "medium": "papier czerpany",
           "year": "2026"
         }
       },
@@ -380,8 +396,8 @@
       },
       {
         "type": "quote",
-        "text": "Nauczyciele w szkole mówili do nas, mówili, mówili… Nic nie rozumieliśmy. Potem pisali\njakieś słowa na tablicy, a my je przepisywaliśmy. (…) Potem uczyliśmy się tych słów na pamięć, choć nie wiedzieliśmy, co znaczą. <br>Kiedy jesteśmy sami ze sobą, głusi z głuchymi, możemy do siebie migać, nie czujemy się\ninni. (…) Jesteśmy niepełnosprawni tylko wtedy, gdy jesteśmy między wami, słyszącymi.",
-        "cite": "fragment książki Anny Goc <i>Głusza</i>"
+        "text": "Nauczyciele w szkole mówili do nas, mówili, mówili… Nic nie rozumieliśmy. Potem pisali jakieś słowa na tablicy, a my je przepisywaliśmy. (…) Potem uczyliśmy się tych słów na pamięć, choć nie wiedzieliśmy, co znaczą. <br><br>Kiedy jesteśmy sami ze sobą, głusi z głuchymi, możemy do siebie migać, nie czujemy się\ninni. (…) Jesteśmy niepełnosprawni tylko wtedy, gdy jesteśmy między wami, słyszącymi.",
+        "cite": "fragmenty książki Anny Goc <i>Głusza</i>"
       },
       {
         "type": "image",

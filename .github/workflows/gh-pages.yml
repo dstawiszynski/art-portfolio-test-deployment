@@ -1,75 +1,68 @@
-name: gh-pages deploy
+name: Deploy showcase-app to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-
-
+    branches: [main]
   workflow_dispatch:
-
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # PLACEHOLDER — replace with your real domain (used for canonical/OG URLs, the
+      # sitemap, and the CNAME file below). Leave unset (delete this env block) if you
+      # don't want a custom domain and will use the default
+      # https://<owner>.github.io/<repo>/ URL instead — in that case also add
+      # `--base-href /<repo>/` to the build step.
+      SITE_BASE_URL: https://example.com
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-node-modules
-        with:
-          # caching node_modules
-          path: node_modules # path for node_modules folder
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          #  name of the chache key includes package-lock.json
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Install modules
-        if:
-          steps.cache-nodemodules.outputs.cache-hit != 'true'
-        # if cache hits the skip this step.
+      - name: Install dependencies
         run: npm ci
 
-      - name: Conventional Changelog Action
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
-        with:
-          github-token: ${{ secrets.ACTIONS_SECRET }}
-          output-file: "false"
+      - name: Build showcase-app (site + sitemap/robots.txt)
+        run: npm run build:showcase-app
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_SECRET }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+      - name: Custom domain (CNAME)
+        # PLACEHOLDER — replace with your real domain, or delete this step entirely if
+        # you're using the default github.io URL instead of a custom domain.
+        run: echo "example.com" > dist/showcase-app/browser/CNAME
 
-      - name: Deploy
-        run: |
-          npm run deploy
+      - name: Prevent Jekyll processing
+        run: touch dist/showcase-app/browser/.nojekyll
+
+      - name: SPA fallback for unknown routes
+        run: cp dist/showcase-app/browser/index.csr.html dist/showcase-app/browser/404.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/showcase-app/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

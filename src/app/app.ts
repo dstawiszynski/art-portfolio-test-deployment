@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {LayoutComponent} from '@xalpol12/ngx-artist-portfolio';
+import {LayoutComponent} from '@xalpol12/artist-portfolio';
 
 @Component({
   selector: 'app-root',

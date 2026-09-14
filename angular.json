@@ -31,7 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/@xalpol12/ngx-artist-portfolio/src/lib/styles/main.scss"
+              "node_modules/@xalpol12/artist-portfolio/src/lib/styles/main.scss"
             ]
           },
           "configurations": {
