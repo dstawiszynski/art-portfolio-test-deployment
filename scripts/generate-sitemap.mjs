@@ -1,7 +1,6 @@
 // Generates public/sitemap.xml and public/robots.txt from the site's projects data.
 // Requires the SITE_BASE_URL env var (e.g. `SITE_BASE_URL=https://myartist.com npm run build`).
 // Skips silently (with a warning) when it isn't set, so local/dev builds aren't blocked.
-import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
