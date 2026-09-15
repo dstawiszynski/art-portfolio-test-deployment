@@ -1,4 +1,4 @@
-name: Deploy showcase-app to GitHub Pages
+name: Deploy art-portfolio-test-deployment to GitHub Pages
 
 on:
   push:
@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build showcase-app
-        run: npm run build:showcase-app
+      - name: Build art-portfolio-test-deployment
+        run: npm run build:art-portfolio-test-deployment
 
       - name: Prevent Jekyll processing
         run: touch dist/art-portfolio-test-deployment/browser/.nojekyll
