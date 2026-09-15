@@ -41,7 +41,7 @@ jobs:
         run: touch dist/art-portfolio-test-deployment/browser/.nojekyll
 
       - name: SPA fallback for unknown routes
-        run: cp dist/art-portfolio-test-deployment/browser/index.csr.html dist/art-portfolio-test-deployment/browser/404.html
+        run: cp dist/art-portfolio-test-deployment/browser/index.html dist/art-portfolio-test-deployment/browser/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
