@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
-    "build:art-portfolio-test-deployment": "ng build art-portfolio-test-deployment",
+    "build:art-portfolio-test-deployment": "ng build art-portfolio-test-deployment --base-href /art-portfolio-test-deployment/",
     "prebuild:art-portfolio-test-deployment": "npm run generate:sitemap"
   },
   "private": true,
